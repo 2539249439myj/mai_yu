@@ -1,12 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <TopNav></TopNav>
+    <!-- router-view 是路由匹配到视图组件显示位置 -->
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
+
+<script>
+import TopNav from './components/TopNav'
+export default {
+  components:{
+    TopNav
+  }
+}
+</script>
 
 <style>
 #app {
